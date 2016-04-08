@@ -1,16 +1,16 @@
 if ('serviceWorker' in navigator) {
     console.log('Service Worker is supported');
-    navigator.serviceWorker.register('sw.js').then(function(reg) {
-        console.log(':Register:^)', reg);
+    
+    navigator.serviceWorker.register('sw.js').then(function() {
+        return navigator.serviceWorker.ready;
         
-        reg.pushManager.subscribe({
-            userVisibleOnly: true
-        }).then(function(sub) {
+    }).then(function(reg) {
+        console.log('Service Worker is ready :^)', reg);
+        
+        reg.pushManager.subscribe({userVisibleOnly: true}).then(function(sub) {
             console.log('endpoint:', sub.endpoint);
         });
-
-
-    }).catch(function(err) {
-        console.log(':error^(', err);
+    }).catch(function(error) {
+        console.log('Service Worker error :^(', error);
     });
 }
