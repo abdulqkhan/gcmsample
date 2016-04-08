@@ -1,5 +1,4 @@
 {
   "name": "My GCM Sample Web App",
-  "gcm_sender_id": "gcmsample-1275",
-  "gcm_user_visible_only": true
+  "gcm_sender_id": "gcmsample-1275"
 }
