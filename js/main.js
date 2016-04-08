@@ -7,9 +7,9 @@ if ('serviceWorker' in navigator) {
     }).then(function(reg) {
         console.log('Service Worker is ready :^)', reg);
         
-        //reg.pushManager.subscribe({userVisibleOnly: true}).then(function(sub) {
-        //    console.log('endpoint:', sub.endpoint);
-        //});
+        reg.pushManager.subscribe({userVisibleOnly: true}).then(function(sub) {
+            console.log('endpoint:', sub.endpoint);
+        });
     }).catch(function(error) {
         console.log('Service Worker error :^(', error);
     });
