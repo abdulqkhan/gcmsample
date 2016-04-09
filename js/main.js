@@ -10,7 +10,7 @@ if ('serviceWorker' in navigator) {
         reg.pushManager.subscribe({userVisibleOnly: true}).then(function(sub) {
 
             var p = document.getElementById('details');
-            p.innerText = 'test';
+            p.innerText = sub.endpoint;
 
             console.log('endpoint:', sub.endpoint);
         });
