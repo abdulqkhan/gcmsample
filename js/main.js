@@ -8,6 +8,7 @@ if ('serviceWorker' in navigator) {
 
     }).then(function(reg) {
         console.log('Service Worker is ready :^)', reg);
+        p.innerText = '</br>service worker ready';
         
         reg.pushManager.subscribe({userVisibleOnly: true}).then(function(sub) {
 
