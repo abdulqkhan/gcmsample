@@ -1,5 +1,7 @@
 if ('serviceWorker' in navigator) {
-    console.log('Service Worker is supported');
+        var p = document.getElementById('details');
+        p.innerText = 'service worker supported';
+        console.log('Service Worker is supported');
     
     navigator.serviceWorker.register('sw.js').then(function() {
         return navigator.serviceWorker.ready;
@@ -17,4 +19,9 @@ if ('serviceWorker' in navigator) {
     }).catch(function(error) {
         console.log('Service Worker error :^(', error);
     });
+}
+else {
+    var p = document.getElementById('details');
+        p.innerText = 'service worker supported';
+        console.log('Service Worker is supported');
 }
