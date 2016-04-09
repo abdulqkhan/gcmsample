@@ -1,5 +1,5 @@
 if ('serviceWorker' in navigator) {
-        var p = document.getElementById('details');
+        var p = document.getElementById('messages');
         p.innerText = 'service worker supported';
         console.log('Service Worker is supported');
     
@@ -8,7 +8,8 @@ if ('serviceWorker' in navigator) {
 
     }).then(function(reg) {
         console.log('Service Worker is ready :^)', reg);
-        p.innerText = '</br>service worker ready';
+        var p = document.getElementById('messages');
+        p.innerHTML = '<p>service worker ready</p>';
         
         reg.pushManager.subscribe({userVisibleOnly: true}).then(function(sub) {
 
