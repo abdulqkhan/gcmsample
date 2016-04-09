@@ -8,6 +8,10 @@ if ('serviceWorker' in navigator) {
         console.log('Service Worker is ready :^)', reg);
         
         reg.pushManager.subscribe({userVisibleOnly: true}).then(function(sub) {
+
+            var p = document.getElementById('details');
+            p.innerText = 'test';
+
             console.log('endpoint:', sub.endpoint);
         });
     }).catch(function(error) {
